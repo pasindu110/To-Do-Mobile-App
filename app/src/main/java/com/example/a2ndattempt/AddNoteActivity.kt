@@ -19,6 +19,8 @@ class AddNoteActivity : AppCompatActivity() {
 
         db = NoteDatabaseHelper(this)
 
-        binding
+        binding.saveButton.setOnClickListener{
+            val title = binding
+        }
     }
 }
