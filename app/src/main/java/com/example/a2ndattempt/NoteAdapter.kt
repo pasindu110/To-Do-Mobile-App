@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a2ndattempt.Note
 import com.example.a2ndattempt.NoteDatabaseHelper
@@ -20,7 +21,7 @@ class NoteAdapter(private var notes: List<Note>,context: Context) : RecyclerView
         val titleTextView:  TextView = itemView.findViewById(R.id.titleTextView)
         val contextTextView:  TextView = itemView.findViewById(R.id.contentTextView)
         val updateButton:  ImageView= itemView.findViewById(R.id.updateButton)
-
+        val deleteButton:  ImageView= itemView.findViewById(R.id.deleteButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
@@ -43,6 +44,12 @@ class NoteAdapter(private var notes: List<Note>,context: Context) : RecyclerView
             }
             holder.itemView.context.startActivity(intent)
 
+        }
+
+        holder.deleteButton.setOnClickListener {
+            db.deleteNote(note.id)
+            refreshData(db.getAllNotes())
+            Toast.makeText(holder.itemView.context," Todo deleted ",Toast.LENGTH_SHORT).show()
         }
 
     }
