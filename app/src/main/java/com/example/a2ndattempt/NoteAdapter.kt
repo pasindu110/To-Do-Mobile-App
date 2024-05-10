@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a2ndattempt.Note
 import com.example.a2ndattempt.NoteDatabaseHelper
 import com.example.a2ndattempt.R
+import com.example.a2ndattempt.UpdateNoteActivity
 
 class NoteAdapter(private var notes: List<Note>,context: Context) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     private val db : NoteDatabaseHelper = NoteDatabaseHelper(context)
@@ -20,7 +19,7 @@ class NoteAdapter(private var notes: List<Note>,context: Context) : RecyclerView
     class NoteViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val titleTextView:  TextView = itemView.findViewById(R.id.titleTextView)
         val contextTextView:  TextView = itemView.findViewById(R.id.contentTextView)
-        val updateButton:  ImageView= itemView.findViewById(R.id.updateButton)
+        val updateButton:  ImageView= itemView.findViewById(R.id.updatesaveButton)
         val deleteButton:  ImageView= itemView.findViewById(R.id.deleteButton)
     }
 
@@ -34,10 +33,17 @@ class NoteAdapter(private var notes: List<Note>,context: Context) : RecyclerView
 
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        val todo = notes[position]
-        holder.titleTextView.text = todo.title
-        holder.contextTextView.text = todo.content
+        val note = notes[position]
+        holder.titleTextView.text = note.title
+        holder.contextTextView.text = note.content
 
+        holder.updateButton.setOnClickListener {
+            val intent =   Intent(holder.itemView.context,UpdateNoteActivity::class.java).apply {
+                putExtra("note_id",note.id)
+            }
+            holder.itemView.context.startActivity(intent)
+
+        }
 
     }
     fun refreshData(newNote: List<Note>){
