@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
-        binding.imageButton.setOnClickListener{
+        binding.addButton.setOnClickListener{
             val intent = Intent(this,AddNoteActivity::class.java)
             startActivity(intent)
         }
