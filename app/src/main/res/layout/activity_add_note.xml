@@ -28,6 +28,7 @@
         android:layout_marginEnd="6dp"/>
 
     <EditText
+        android:id="@+id/titleEditText"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="Enter the title"
@@ -39,6 +40,7 @@
         android:maxLines="1"/>
 
     <EditText
+        android:id="@+id/contentEditText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/addNoteHeading"
