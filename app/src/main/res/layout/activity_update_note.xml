@@ -19,7 +19,7 @@
         android:textColor="@color/orange"
         android:textSize="24sp" />
     <ImageView
-        android:id="@+id/updatesaveButton"
+        android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_done_24"
@@ -40,7 +40,7 @@
         android:maxLines="1"/>
 
     <EditText
-        android:id="@+id/updatecontentEditText"
+        android:id="@+id/updatecontent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/updatetitleEditText"
