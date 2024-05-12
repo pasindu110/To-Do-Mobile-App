@@ -18,6 +18,9 @@
         android:text="Edit Note."
         android:textColor="@color/orange"
         android:textSize="24sp" />
+
+
+
     <ImageView
         android:id="@+id/updatesaveButton"
         android:layout_width="wrap_content"
