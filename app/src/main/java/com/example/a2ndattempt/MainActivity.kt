@@ -28,6 +28,23 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddNoteActivity::class.java)
             startActivity(intent)
         }
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (!newText.isNullOrEmpty()) {
+                    val filteredNotes = db.getAllNotes().filter { it.title.contains(newText, true) }
+                    noteAdapter.refreshData(filteredNotes)
+                } else {
+                    noteAdapter.refreshData(db.getAllNotes())
+                }
+                return true
+            }
+        })
+
     }
 
     override fun onResume() {
