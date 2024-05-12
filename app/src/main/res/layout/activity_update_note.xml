@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context="UpdateNoteActivity">
+    tools:context=".UpdateNoteActivity">
 
     <TextView
         android:id="@+id/editNoteHeading"
@@ -19,7 +19,7 @@
         android:textColor="@color/orange"
         android:textSize="24sp" />
     <ImageView
-        android:id="@+id/updateButton"
+        android:id="@+id/updatesaveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_done_24"
@@ -27,11 +27,13 @@
         android:layout_alignTop="@+id/editNoteHeading"
         android:layout_marginEnd="6dp"/>
 
+
+
     <EditText
-        android:id="@+id/updatetitleEditText"
+        android:id="@+id/updateTitleEditText"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:hint="Update the title"
+        android:hint="Enter the title"
         android:padding="12dp"
         android:textSize="20sp"
         android:layout_below="@+id/editNoteHeading"
@@ -40,14 +42,14 @@
         android:maxLines="1"/>
 
     <EditText
-        android:id="@+id/updatecontent"
+        android:id="@+id/updateContentEditText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/updatetitleEditText"
+        android:layout_below="@+id/updateTitleEditText"
         android:layout_marginTop="12dp"
         android:background="@drawable/orange_boder"
         android:gravity="top"
-        android:hint="Update the Discription"
+        android:hint="Enter the Discription"
         android:padding="12dp"
         android:textSize="18sp" />
 
