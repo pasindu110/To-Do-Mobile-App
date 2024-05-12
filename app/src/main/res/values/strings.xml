@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">2nd Attempt</string>
+    <string name="update_the_discription">Update the Discription</string>
+    <string name="update_the_title">Update the title</string>
 </resources>
