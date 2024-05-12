@@ -24,6 +24,7 @@ class UpdateNoteActivity : AppCompatActivity() {
             return
         }
 
+
         val note = db.getNoteByID(noteId)
         binding.updateTitleEditText.setText(note.title)
         binding.updateContentEditText.setText(note.content)
